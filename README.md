@@ -71,11 +71,13 @@ npm install echarts vue-echarts
 
 # Inicie o servidor de desenvolvimento
 
+```bash
 quasar dev
+```
 
 # Testando a Aplicação
 
-Acesse o sistema via navegador.
+Acesse o sistema via navegador. (http://localhost:9000/#/)
 
 Cadastre um produto.
 
