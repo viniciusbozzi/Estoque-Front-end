@@ -1,13 +1,8 @@
 <template>
-  <q-page class="flex flex-center">
-    <img
-      alt="Quasar logo"
-      src="~assets/quasar-logo-vertical.svg"
-      style="width: 200px; height: 200px"
-    >
+  <q-page class="q-pa-md">
+    <h2>Bem-vindo ao Sistema de Estoque</h2>
+    <p>Use o menu para navegar entre produtos, movimentações e gráficos.</p>
   </q-page>
 </template>
 
-<script setup>
-//
-</script>
+<script setup></script>

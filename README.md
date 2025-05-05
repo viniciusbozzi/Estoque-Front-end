@@ -1,40 +1,80 @@
-# Quasar App (estoque-frontend)
+# 📦 Controle de Estoque - Vue.js + Quasar
 
-A Quasar Project
+Este é um projeto de controle de estoque simples, desenvolvido com **Vue 3**, **Quasar Framework** e armazenamento em **localStorage**. O sistema permite:
 
-## Install the dependencies
+- Cadastro de produtos
+- Registro de movimentações de entrada e saída
+- Validação de estoque disponível
+- Visualização de gráfico de movimentações por produto
+
+🔗 Repositório: [github.com/viniciusbozzi/Estoque-Front-end](https://github.com/viniciusbozzi/Estoque-Front-end)
+
+# Estrutura do projeto
+
 ```bash
-yarn
-# or
+src/
+├── pages/
+│   ├── ProdutoForm.vue
+│   ├── ProdutoList.vue
+│   ├── MovimentacaoForm.vue
+│   ├── MovimentacaoList.vue
+│   └── GraficoEstoque.vue
+├── utils/
+│   └── utils.js   # Funções genéricas para localStorage
+└── App.vue
+```
+
+---
+
+## 🚀 Tecnologias Utilizadas
+
+- [Vue 3](https://vuejs.org/)
+- [Quasar Framework](https://quasar.dev/)
+- [ECharts](https://echarts.apache.org/) via `vue-echarts` (para os gráficos)
+- `localStorage` (persistência de dados local)
+
+---
+
+## ⚙️ Pré-requisitos
+
+- [Node.js](https://nodejs.org/) instalado (recomendado: versão 22)
+- [npm](https://www.npmjs.com/) (versão 10) como gerenciador de pacotes
+
+- [Quasar CLI](https://quasar.dev/start/quasar-cli) instalado globalmente, faça:
+
+````bash
+npm install -g @quasar/cli
+
+---
+
+## 📦 Instalação
+
+```bash
+# 1. Clone o repositório
+git clone https://github.com/seu-usuario/seu-repositorio.git
+
+# 2. Acesse a pasta do projeto
+cd Estoque-Front-end
+
+# 3. Instale as dependências
 npm install
-```
 
-### Start the app in development mode (hot-code reloading, error reporting, etc.)
-```bash
+# 4. Instale dependências para gráficos
+npm install echarts vue-echarts
+````
+
+# Inicie o servidor de desenvolvimento
+
 quasar dev
-```
 
+# Testando a Aplicação
 
-### Lint the files
-```bash
-yarn lint
-# or
-npm run lint
-```
+Acesse o sistema via navegador.
 
+Cadastre um produto.
 
-### Format the files
-```bash
-yarn format
-# or
-npm run format
-```
+Registre movimentações de entrada e saída.
 
+Tente registrar uma saída maior que o estoque e veja a validação.
 
-### Build the app for production
-```bash
-quasar build
-```
-
-### Customize the configuration
-See [Configuring quasar.config.js](https://v2.quasar.dev/quasar-cli-vite/quasar-config-js).
+Visualize o gráfico do estoque do produto.

@@ -1,44 +1,41 @@
 <template>
   <q-layout view="lHh Lpr lFf">
+    <!-- Cabeçalho -->
     <q-header elevated>
       <q-toolbar>
-        <q-btn
-          flat
-          dense
-          round
-          icon="menu"
-          aria-label="Menu"
-          @click="toggleLeftDrawer"
-        />
-
-        <q-toolbar-title>
-          Quasar App
-        </q-toolbar-title>
-
-        <div>Quasar v{{ $q.version }}</div>
+        <q-btn flat dense round icon="menu" @click="drawer = !drawer" aria-label="Menu" />
+        <q-toolbar-title>Sistema de Estoque</q-toolbar-title>
       </q-toolbar>
     </q-header>
 
-    <q-drawer
-      v-model="leftDrawerOpen"
-      show-if-above
-      bordered
-    >
+    <!-- Menu lateral -->
+    <q-drawer show-if-above v-model="drawer" side="left" bordered>
       <q-list>
-        <q-item-label
-          header
-        >
-          Essential Links
-        </q-item-label>
+        <q-item-label header>Navegação</q-item-label>
 
-        <EssentialLink
-          v-for="link in linksList"
-          :key="link.title"
-          v-bind="link"
-        />
+        <q-item clickable v-ripple to="/">
+          <q-item-section avatar><q-icon name="home" /></q-item-section>
+          <q-item-section>Início</q-item-section>
+        </q-item>
+
+        <q-item clickable v-ripple to="/produtos">
+          <q-item-section avatar><q-icon name="inventory_2" /></q-item-section>
+          <q-item-section>Produtos</q-item-section>
+        </q-item>
+
+        <q-item clickable v-ripple to="/movimentacoes">
+          <q-item-section avatar><q-icon name="swap_horiz" /></q-item-section>
+          <q-item-section>Movimentações</q-item-section>
+        </q-item>
+
+        <q-item clickable v-ripple to="/estoque">
+          <q-item-section avatar><q-icon name="bar_chart" /></q-item-section>
+          <q-item-section>Estoque</q-item-section>
+        </q-item>
       </q-list>
     </q-drawer>
 
+    <!-- Conteúdo principal -->
     <q-page-container>
       <router-view />
     </q-page-container>
@@ -47,56 +44,5 @@
 
 <script setup>
 import { ref } from 'vue'
-import EssentialLink from 'components/EssentialLink.vue'
-
-const linksList = [
-  {
-    title: 'Docs',
-    caption: 'quasar.dev',
-    icon: 'school',
-    link: 'https://quasar.dev'
-  },
-  {
-    title: 'Github',
-    caption: 'github.com/quasarframework',
-    icon: 'code',
-    link: 'https://github.com/quasarframework'
-  },
-  {
-    title: 'Discord Chat Channel',
-    caption: 'chat.quasar.dev',
-    icon: 'chat',
-    link: 'https://chat.quasar.dev'
-  },
-  {
-    title: 'Forum',
-    caption: 'forum.quasar.dev',
-    icon: 'record_voice_over',
-    link: 'https://forum.quasar.dev'
-  },
-  {
-    title: 'Twitter',
-    caption: '@quasarframework',
-    icon: 'rss_feed',
-    link: 'https://twitter.quasar.dev'
-  },
-  {
-    title: 'Facebook',
-    caption: '@QuasarFramework',
-    icon: 'public',
-    link: 'https://facebook.quasar.dev'
-  },
-  {
-    title: 'Quasar Awesome',
-    caption: 'Community Quasar projects',
-    icon: 'favorite',
-    link: 'https://awesome.quasar.dev'
-  }
-]
-
-const leftDrawerOpen = ref(false)
-
-function toggleLeftDrawer () {
-  leftDrawerOpen.value = !leftDrawerOpen.value
-}
+const drawer = ref(true)
 </script>
