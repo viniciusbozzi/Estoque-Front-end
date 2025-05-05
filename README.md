@@ -13,12 +13,17 @@ Este é um projeto de controle de estoque simples, desenvolvido com **Vue 3**, *
 
 ```bash
 src/
-├── pages/
+├── components/
 │   ├── ProdutoForm.vue
-│   ├── ProdutoList.vue
+│   ├── ProdutoLista.vue
 │   ├── MovimentacaoForm.vue
-│   ├── MovimentacaoList.vue
-│   └── GraficoEstoque.vue
+│   ├── MovimentacaoLista.vue
+│   └── EstoqueGrafico.vue
+├── pages/
+│   ├── IndexPage.vue
+│   ├── ProdutoPage.vue
+│   ├── MovimentacaoPage.vue
+│   └── EstoquePage.vue
 ├── utils/
 │   └── utils.js   # Funções genéricas para localStorage
 └── App.vue
