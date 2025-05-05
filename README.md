@@ -49,7 +49,7 @@ src/
 
 ````bash
 npm install -g @quasar/cli
-
+```
 ---
 
 ## 📦 Instalação
