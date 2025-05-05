@@ -47,9 +47,10 @@ src/
 
 - [Quasar CLI](https://quasar.dev/start/quasar-cli) instalado globalmente, faça:
 
-````bash
+```bash
 npm install -g @quasar/cli
 ```
+
 ---
 
 ## 📦 Instalação
@@ -66,7 +67,7 @@ npm install
 
 # 4. Instale dependências para gráficos
 npm install echarts vue-echarts
-````
+```
 
 # Inicie o servidor de desenvolvimento
 
